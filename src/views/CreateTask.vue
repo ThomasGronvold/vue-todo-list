@@ -32,17 +32,7 @@
 <script setup lang="ts">
 import { inject, ref, computed } from "vue";
 import { useRouter } from "vue-router";
-
-type Task = {
-  taskDesc: string;
-  dueDate: string;
-  completed: boolean;
-};
-
-type TaskManager = {
-  addTask(task: Task): void;
-  getAllTasks(): Task[];
-}
+import { Task, TaskManager} from "../data"
 
 const router = useRouter();
 const $tasks = inject("$tasks") as TaskManager;
@@ -52,7 +42,7 @@ let dueDate = ref<string>("");
 let completed = ref<boolean>(false);
 
 function cancel(): void {
-  router.push("/tasks")
+  router.push("/taskList")
 }
 
 function submitForm(): void {

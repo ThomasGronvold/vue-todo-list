@@ -33,19 +33,9 @@
 <script setup lang="ts">
 import { inject } from "vue";
 import { useRouter } from "vue-router";
+import { Task, TaskManager} from "../data"
 
 const router = useRouter();
-
-interface Task {
-  taskDesc: null;
-  dueDate: number;
-  completed: boolean;
-}
-
-type TaskManager = {
-  getAllTasks(): Task[];
-  removeTask(index: number): void;
-};
 
 const $tasks = inject("$tasks") as TaskManager;
 

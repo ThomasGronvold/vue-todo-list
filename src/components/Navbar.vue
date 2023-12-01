@@ -2,7 +2,7 @@
   <nav class="navbar-dark bg-dark navbar navbar-expand-lg">
     <div class="container-fluid">
       <router-link
-        to="/tasks"
+        to="/taskList"
         class="nav-link navbar-brand"
         active-class="active"
         aria-current="page"
@@ -15,7 +15,7 @@
           >
         </li>
         <li>
-          <router-link to="taskList/createTask" class="nav-link" exact-active-class="active" aria-current="page"
+          <router-link :to="{ path: '/taskList/createTask' }" class="nav-link" exact-active-class="active" aria-current="page"
             >Create Task</router-link
           >
         </li>

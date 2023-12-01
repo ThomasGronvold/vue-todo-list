@@ -30,19 +30,7 @@
 <script lang="ts">
 import { inject, ref, computed, defineComponent } from "vue";
 import { useRouter } from "vue-router";
-
-type Task = {
-  taskDesc: string;
-  dueDate: string;
-  completed: boolean;
-};
-
-type TaskManager = {
-  addTask(task: Task): void;
-  getAllTasks(): Task[];
-  getSpecificTask(index: number): Task;
-  editTask(task: Task, index: number): void;
-};
+import { Task, TaskManager} from "../data"
 
 export default defineComponent({
   props: ["index"],
@@ -57,7 +45,7 @@ export default defineComponent({
     let completed = ref(taskToEdit.completed);
 
     const cancel = (): void => {
-      router.push("/tasks");
+      router.push("/taskList");
     };
 
     const submitForm = (): void => {

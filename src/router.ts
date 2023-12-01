@@ -7,6 +7,7 @@ import EditTask from "./views/EditTask.vue";
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
+    {path : "", redirect: "/taskList"},
     { path: "/:index?", component: ToDoList },
     {
       path: "/taskList",
